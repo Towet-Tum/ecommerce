@@ -1,0 +1,14 @@
+{% extends 'main.html' %}
+
+{% block content %}
+  <section class="container mx-auto mt-12">
+    <div class="text-center">
+      <h1 class="text-4xl font-bold mb-4">Thank You {{request.user}}</h1>
+      <p class="text-xl">Your have Login successfully......   </p>
+       <div class="mt-8">
+        <a href="{% url 'cart' %}" class="btn btn-outline-secondary">Go Shopping</a>
+        
+      </div>
+    </div>
+  </section>
+{% endblock %}

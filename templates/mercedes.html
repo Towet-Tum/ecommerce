@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+	<div class="row">
+		{% for merc in mercs%}
+		<div class="col-lg-4">
+			<img class="thumbnail" src="{{merc.imageURL}}">
+			<div class="box-element product">
+				<h6><strong>{{merc.make}}</strong></h6>
+				<hr>
+
+				<button data-product="{{merc.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+				
+				<a class="btn btn-outline-success" href="{% url 'product_detail'  merc.id %}">View</a>
+				<h4 style="display: inline-block; float: right;"><strong>Ksh{{merc.price}}</strong></h4>
+
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+
+{% endblock content %}

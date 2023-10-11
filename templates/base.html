@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your E-commerce Website</title>
+  <!-- Tailwind CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/css/glide.core.min.css">
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="{% static 'static/css/style.css' %}">
+  <style>
+    /* Custom styles using corporate colors */
+    :root {
+      --primary-color: #002060; /* Dark Royal Blue */
+      --secondary-color: #FFD700; /* Gold */
+    }
+   
+
+    /* Transparent navbar with overlay */
+    .navbar {
+      background-color: rgba(0, 77, 96, 0.8); /* Dark Royal Blue with 0.8 opacity */
+    }
+
+    .overlay {
+      background-color: #f1e9e9b3; /* Black overlay with 0.7 opacity */
+    }
+
+    /* Customize other elements using corporate colors */
+    /* For example, you can style buttons and links with the primary color */
+    .btn-primary {
+      background-color: var(--primary-color);
+      color: #fff;
+    }
+
+    /* For example, you can style secondary buttons with the secondary color */
+    .btn-secondary {
+      background-color: var(--secondary-color);
+      color: #fff;
+    }
+
+    /* Other custom styles can be added here */
+  </style>
+</head>
+
+<body class="bg-gray-100">
+  <!-- Navbar -->
+  
+
+  <!-- Dark overlay for the whole page -->
+  <div class="overlay">
+    <!-- Main content goes here -->
+    <div class="container mx-auto py-10">
+      <!-- Page content goes here -->
+      {% block content %}
+      {% endblock %}
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white text-center py-4">
+    &copy; Towet Dan 2023
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/glide.min.js"></script>
+</body>
+
+</html>

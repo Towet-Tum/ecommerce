@@ -1,0 +1,26 @@
+<!-- login.html -->
+
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+  <section class="container mx-auto h-screen flex items-center justify-center">
+    <div class="bg-white bg-opacity-40 shadow-lg rounded-lg p-8 max-w-md w-full">
+      <h2 class="text-3xl font-semibold mb-6">Login</h2>
+      <form method="POST">
+        {% csrf_token %}
+        <!-- Input fields -->
+        <div class="mb-4">
+          <label for="username" class="block text-gray-700">Username</label>
+          <input type="text" id="username" name="username" class="rounded-lg border p-2 w-full" placeholder="Enter your username" required>
+        </div>
+        <div class="mb-4">
+          <label for="password" class="block text-gray-700">Password</label>
+          <input type="password" id="password" name="password" class="rounded-lg border p-2 w-full" placeholder="Enter your password" required>
+        </div>
+
+        <!-- Submit button -->
+        <button type="submit" class="btn-primary w-full mt-4">Login</button>
+      </form>
+    </div>
+  </section>
+{% endblock %}

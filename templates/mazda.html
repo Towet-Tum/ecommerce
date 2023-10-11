@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+	<div class="row">
+		{% for mazda in mazdas %}
+		<div class="col-lg-4">
+			<img class="thumbnail" src="{{mazda.imageURL}}">
+			<div class="box-element product">
+				<h6><strong>{{mazda.make}}</strong></h6>
+				<hr>
+
+				<button data-product="{{mazda.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+				
+				<a class="btn btn-outline-success" href="{% url 'product_detail'  mazda.id %}">View</a>
+				<h4 style="display: inline-block; float: right;"><strong>${{mazda.price}}</strong></h4>
+
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+
+{% endblock content %}
